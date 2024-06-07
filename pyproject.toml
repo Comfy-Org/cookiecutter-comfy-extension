@@ -28,8 +28,8 @@ dev = [
 ]
 
 [project.urls]
-bugs = "https://github.com/telamonian/cookiecutter-comfy-extension/issues"
-homepage = "https://github.com/telamonian/cookiecutter-comfy-extension"
+bugs = "https://github.com/comfy-org/cookiecutter-comfy-extension/issues"
+homepage = "https://github.com/comfy-org/cookiecutter-comfy-extension"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
