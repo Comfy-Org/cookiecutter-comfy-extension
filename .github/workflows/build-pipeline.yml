@@ -1,40 +1,40 @@
-# GitHub CI build pipeline
-name: cookiecutter-comfy-extension CI build
+# # GitHub CI build pipeline
+# name: cookiecutter-comfy-extension CI build
 
-on:
-  pull_request:
-    branches:
-      - master
-      - main
-jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    env:
-      PYTHONIOENCODING: "utf8"
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ["3.9"]
+# on:
+#   pull_request:
+#     branches:
+#       - master
+#       - main
+# jobs:
+#   build:
+#     strategy:
+#       matrix:
+#         os: [ubuntu-latest, windows-latest, macos-latest]
+#         python-version: ["3.9"]
+#     runs-on: ${{ matrix.os }}
+#     env:
+#       PYTHONIOENCODING: "utf8"
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install --upgrade build coverage twine wheel
-          pip install .
-      - name: Run Tests
-        run: |
-          pytest tests/
-      # - name: Run package creation
-      #   run: |
-      #     python -m build
-      # - name: Archive package
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: cookie-cutter
-      #     path: src/dist
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: ${{ matrix.python-version }}
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install --upgrade build coverage twine wheel
+#           pip install .
+#       - name: Run Tests
+#         run: |
+#           pytest tests/
+#       # - name: Run package creation
+#       #   run: |
+#       #     python -m build
+#       # - name: Archive package
+#       #   uses: actions/upload-artifact@v2
+#       #   with:
+#       #     name: cookie-cutter
+# #       #     path: src/dist
