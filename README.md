@@ -22,6 +22,10 @@
 
   # if you installed cookiecutter with pip
   cookiecutter gh:comfy-org/cookiecutter-comfy-extension
+
+  # initialize git repo in your new project
+  cd <your-project-name>
+  git init
   ```
 
 ## Features
