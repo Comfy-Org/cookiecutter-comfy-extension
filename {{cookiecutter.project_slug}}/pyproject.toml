@@ -61,7 +61,6 @@ disable_error_code = "attr-defined"
 line-length = 140
 src = ["src", "tests"]
 target-version = "py39"
-exclude = ["*cookiecutter.project_slug*"]
 
 [tool.ruff.lint.flake8-quotes]
 inline-quotes = "double"
