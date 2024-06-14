@@ -21,6 +21,7 @@ dev = [
     "bump-my-version",
     "coverage",  # testing
     "mypy",  # linting
+    "pre-commit", # runs linting on commit
     "pytest",  # testing
     "ruff",  # linting
 ]
