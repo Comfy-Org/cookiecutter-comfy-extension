@@ -2,7 +2,7 @@
 
 ## A cookiecutter template for writing a ComfyUI custom node extension
 
-## usage
+## Usage
 
 - First install `cookiecutter`:
 
@@ -23,3 +23,15 @@
   # if you installed cookiecutter with pip
   cookiecutter gh:comfy-org/cookiecutter-comfy-extension
   ```
+
+## Features
+
+The resulting ComfyUI node extension project will automatically come with a few neat features:
+
+- Support for Ruff linter
+- A pre-commit hook for the Ruff linter
+- An `entry_point` that will ensure that ComfyUI can load your extension regardless of how it's installed
+
+In progress (still needs a little work):
+- Testing via PyTest, including a basic integration/sanity check
+- A git action that will automatically run any tests as part of Pull Requests made against your project
