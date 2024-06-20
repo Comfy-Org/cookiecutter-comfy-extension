@@ -30,6 +30,9 @@ dev = [
 bugs = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
 homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 
+[project.entry-points."comfyui.extension_module"]
+ext_mod = "{{cookiecutter.project_slug}}"
+
 # [tool.setuptools]
 # package-dir = {"" = "src"}
 
