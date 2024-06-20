@@ -4,14 +4,14 @@ class Example:
 
     Class methods
     -------------
-    INPUT_TYPES (dict): 
+    INPUT_TYPES (dict):
         Tell the main program input parameters of nodes.
     IS_CHANGED:
         optional method to control when the node is re executed.
 
     Attributes
     ----------
-    RETURN_TYPES (`tuple`): 
+    RETURN_TYPES (`tuple`):
         The type of each element in the output tulple.
     RETURN_NAMES (`tuple`):
         Optional: The name of each output in the output tulple.
@@ -29,7 +29,8 @@ class Example:
     """
     def __init__(self):
         pass
-    https://github.com/telamonian/ComfyUI/blob/installer_script/comfy_enhancement_proposal_1.md
+
+    @classmethod
     def INPUT_TYPES(s):
         """
             Return a dictionary which contains config for all input fields.
@@ -49,7 +50,7 @@ class Example:
             "required": {
                 "image": ("IMAGE",),
                 "int_field": ("INT", {
-                    "default": 0, 
+                    "default": 0,
                     "min": 0, #Minimum value
                     "max": 4096, #Maximum value
                     "step": 64, #Slider's step
