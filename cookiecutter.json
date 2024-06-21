@@ -4,7 +4,7 @@
   "github_username": "telamonian",
   "project_name": "your-beautiful-project-name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+  "project_short_description": "A collection of custom nodes for ComfyUI",
   "version": "0.0.1",
   "open_source_license": ["GNU General Public License v3", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "Not open source"],
   "include_web_directory_for_custom_javascript": false,
