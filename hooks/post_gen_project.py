@@ -1,7 +1,11 @@
 #!/usr/bin/env python
-import pathlib
+from pathlib import Path as Pth
+import shutil
 
 
-if __name__ == '__main__':
-    if 'Not open source' == '{{ cookiecutter.open_source_license }}':
-        pathlib.Path('LICENSE').unlink()
+if __name__ == "__main__":
+    if "{{cookiecutter.open_source_license}}" == "Not open source":
+        Pth("LICENSE").unlink()
+
+    if "{{cookiecutter.__include_web}}" == "False":
+        shutil.rmtree("src/{{cookiecutter.project_slug}}/web")

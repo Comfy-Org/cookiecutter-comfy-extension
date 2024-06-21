@@ -1,8 +1,13 @@
 include LICENSE
 include README.md
 
-recursive-include tests *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
+
+{% if cookiecutter.__include_web -%}
+
+graft src/{{cookiecutter.project_slug}}/web
+
+{%- endif %}
