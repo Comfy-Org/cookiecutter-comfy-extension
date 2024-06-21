@@ -1,13 +1,20 @@
-# {{cookiecutter.project_slug}}
+# {{cookiecutter.project_name}}
 
 ## {{cookiecutter.project_short_description}}
 
 ## Install
 
-To install the extension, execute:
+After you download this extension, you can install it with:
 
 ```bash
-pip install {{cookiecutter.project_slug}}
+cd {{cookiecutter.project_name}}
+pip install .
+```
+
+To install the latest version of the extension from github:
+
+```bash
+pip install {{cookiecutter.project_name}}@git+https://github.com/{{cookiecutter.__gh_slug}}
 ```
 
 ## Uninstall
@@ -15,7 +22,7 @@ pip install {{cookiecutter.project_slug}}
 To remove the extension, execute:
 
 ```bash
-pip uninstall {{cookiecutter.project_slug}}
+pip uninstall {{cookiecutter.project_name}}
 ```
 
 ## Develop
@@ -23,6 +30,7 @@ pip uninstall {{cookiecutter.project_slug}}
 To install the dev dependencies and pre-commit (will run the ruff hook), do:
 
 ```bash
+cd {{cookiecutter.project_name}}
 pip install -e .[dev]
 pre-commit install
 ```
