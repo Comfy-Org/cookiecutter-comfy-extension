@@ -9,7 +9,7 @@ authors = [
 ]
 version="0.0.1"
 description="Cookiecutter template for a Python package"
-license="BSD"
+license={file = "LICENSE"}
 keywords=["cookiecutter", "template", "package"]
 requires-python=">=3.8"
 classifiers = [
