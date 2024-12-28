@@ -2,9 +2,9 @@
 
 ## {{cookiecutter.project_short_description}}
 
-## Getting Started
+## Install
 
-[Install](https://docs.comfy.org/get_started/manual_install) ComfyUI and git clone this repository in the `custom_nodes` directory of ComfyUI.
+[Install](https://docs.comfy.org/get_started) ComfyUI first. Then look up this extension in [ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager). If you are installing manually, clone this repository under `ComfyUI/custom_nodes`.
 
 
 ## Develop
@@ -18,6 +18,18 @@ pre-commit install
 ```
 
 The `-e` flag above will result in a "live" install, in the sense that any changes you make to your node extension will automatically be picked up the next time you run ComfyUI.
+
+## Using Github
+
+Install Github Desktop or follow these [instructions] (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for ssh.
+
+1. Create a Github repository that matches the directory name. 
+2. Push the files to Git
+```
+git add .
+git commit -m "project scaffolding"
+git push
+``` 
 
 ## Publishing to Registry
 

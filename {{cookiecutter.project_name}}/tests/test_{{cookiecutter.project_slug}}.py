@@ -3,18 +3,19 @@
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
 import pytest
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+from src.{{ cookiecutter.project_slug }}.nodes import Example
 
 @pytest.fixture
-def response():
-    """Sample pytest fixture.
+def example_node():
+    """Fixture to create an Example node instance."""
+    return Example()
 
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+def test_example_node_initialization(example_node):
+    """Test that the node can be instantiated."""
+    assert isinstance(example_node, Example)
 
-
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
+def test_return_types():
+    """Test the node's metadata."""
+    assert Example.RETURN_TYPES == ("IMAGE",)
+    assert Example.FUNCTION == "test"
+    assert Example.CATEGORY == "Example"
