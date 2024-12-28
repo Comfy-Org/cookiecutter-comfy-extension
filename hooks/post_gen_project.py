@@ -28,7 +28,7 @@ if __name__ == "__main__":
         Pth("LICENSE").unlink()
 
     if "{{cookiecutter.__include_web}}" == "False":
-        shutil.rmtree("src/{{cookiecutter.project_slug}}/web")
+        shutil.rmtree("web")
 
     if init_git():
         print("✓ Git repository initialized and remote configured")
