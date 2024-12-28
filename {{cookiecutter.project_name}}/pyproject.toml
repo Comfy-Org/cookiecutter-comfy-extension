@@ -65,5 +65,12 @@ line-length = 140
 src = ["src", "tests"]
 target-version = "py39"
 
+# Add rules to ban exec/eval
+[tool.ruff.lint]
+select = [
+    "S102",  # exec-builtin
+    "S307",  # eval-used
+]
+
 [tool.ruff.lint.flake8-quotes]
 inline-quotes = "double"
