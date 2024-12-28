@@ -27,14 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install --upgrade build coverage twine wheel
           pip install .
+      - name: Run Linting
+        run: |
+          ruff check .
       - name: Run Tests
         run: |
           pytest tests/
-      # - name: Run package creation
-      #   run: |
-      #     python -m build
-      # - name: Archive package
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: cookie-cutter
-      #     path: src/dist
