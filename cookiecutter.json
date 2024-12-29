@@ -1,8 +1,8 @@
 {
-  "full_name": "Max Klein",
-  "email": "you@example.com",
-  "github_username": "telamonian",
-  "project_name": "comfyui-extension-example",
+  "full_name": "",
+  "email": "you@gmail.com",
+  "github_username": "your_github_username",
+  "project_name": "{{ custom-node-name.replace('comfyui-', '').replace('comfy-', '') }}",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "A collection of custom nodes for ComfyUI",
   "version": "0.0.1",
