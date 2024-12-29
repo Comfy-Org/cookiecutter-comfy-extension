@@ -1,4 +1,4 @@
-"""Top-level package for {{cookiecutter.project_name}}."""
+"""Top-level package for {{cookiecutter.project_slug}}."""
 
 __all__ = [
     "NODE_CLASS_MAPPINGS",

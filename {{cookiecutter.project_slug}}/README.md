@@ -12,7 +12,7 @@
 To install the dev dependencies and pre-commit (will run the ruff hook), do:
 
 ```bash
-cd {{cookiecutter.project_name}}
+cd {{cookiecutter.project_slug}}
 pip install -e .[dev]
 pre-commit install
 ```

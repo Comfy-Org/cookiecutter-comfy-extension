@@ -2,7 +2,7 @@
   "full_name": "",
   "email": "you@gmail.com",
   "github_username": "your_github_username",
-  "project_name": "my-custom-nodepack",
+  "project_name": "My Custom Nodepack",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace('comfyui_', '').replace('comfy_', '') }}",
   "project_short_description": "A collection of custom nodes for ComfyUI",
   "version": "0.0.1",
