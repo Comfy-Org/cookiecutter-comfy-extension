@@ -32,12 +32,10 @@
 
 The resulting ComfyUI node extension project will automatically come with a few neat features:
 
-- Support for Ruff linter
+- Support for Ruff linter and various recommended rules
 - A pre-commit hook for the Ruff linter
-- An `entry_point` that will ensure that ComfyUI can load your extension regardless of how it's installed
 - An optional `web` directory if your extension will include custom javascript
   - If selected, `web` will also be added to the project's `MANIFEST.in` to ensure that any non-python code in `web` will also be correctly installed
-
-In progress (still needs a little work):
-- Testing via PyTest, including a basic integration/sanity check
-- A git action that will automatically run any tests as part of Pull Requests made against your project
+- Testing via PyTest (check the `tests/` directory)
+- A Github Action that will automatically run any tests as part of Pull Requests made against your project
+- A Github Action to publish to the Comfy Registry

@@ -48,7 +48,7 @@ class Example:
         """
         return {
             "required": {
-                "image": ("IMAGE",),
+                "image": ("IMAGE", { "tooltip": "This is an image"}),
                 "int_field": ("INT", {
                     "default": 0,
                     "min": 0, #Minimum value
@@ -73,10 +73,11 @@ class Example:
 
     RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("image_output_name",)
-
+    DESCRIPTION = "This is an example node"
     FUNCTION = "test"
 
     #OUTPUT_NODE = False
+    #OUTPUT_TOOLTIPS = ("",) # Tooltips for the output node
 
     CATEGORY = "Example"
 

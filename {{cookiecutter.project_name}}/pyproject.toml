@@ -70,6 +70,9 @@ target-version = "py39"
 select = [
     "S102",  # exec-builtin
     "S307",  # eval-used
+    "W293",
+    "F",  # The "F" series in Ruff stands for "Pyflakes" rules, which catch various Python syntax errors and undefined names.
+    # See all rules here: https://docs.astral.sh/ruff/rules/#pyflakes-f
 ]
 
 [tool.ruff.lint.flake8-quotes]
