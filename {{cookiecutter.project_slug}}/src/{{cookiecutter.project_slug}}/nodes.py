@@ -1,6 +1,6 @@
 from comfy.comfy_types import IO, ComfyNodeABC, InputTypeDict
 from inspect import cleandoc
-class ExampleNode(ComfyNodeABC):
+class Example(ComfyNodeABC):
     """
     A example node
 
