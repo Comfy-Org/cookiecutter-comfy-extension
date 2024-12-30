@@ -1,4 +1,6 @@
-class Example:
+from comfy_types import IO, ComfyNodeABC, InputTypeDict
+from inspect import cleandoc
+class ExampleNode(ComfyNodeABC):
     """
     A example node
 
@@ -31,7 +33,7 @@ class Example:
         pass
 
     @classmethod
-    def INPUT_TYPES(s):
+    def INPUT_TYPES(s) -> InputTypeDict:
         """
             Return a dictionary which contains config for all input fields.
             Some types (string): "MODEL", "VAE", "CLIP", "CONDITIONING", "LATENT", "IMAGE", "INT", "STRING", "FLOAT".
@@ -48,15 +50,15 @@ class Example:
         """
         return {
             "required": {
-                "image": ("IMAGE", { "tooltip": "This is an image"}),
-                "int_field": ("INT", {
+                "image": (IO.IMAGE, { "tooltip": "This is an image"}),
+                "int_field": (IO.INT, {
                     "default": 0,
                     "min": 0, #Minimum value
                     "max": 4096, #Maximum value
                     "step": 64, #Slider's step
                     "display": "number" # Cosmetic only: display as "number" or "slider"
                 }),
-                "float_field": ("FLOAT", {
+                "float_field": (IO.FLOAT, {
                     "default": 1.0,
                     "min": 0.0,
                     "max": 10.0,
@@ -64,16 +66,16 @@ class Example:
                     "round": 0.001, #The value represeting the precision to round to, will be set to the step value by default. Can be set to False to disable rounding.
                     "display": "number"}),
                 "print_to_screen": (["enable", "disable"],),
-                "string_field": ("STRING", {
+                "string_field": (IO.STRING, {
                     "multiline": False, #True if you want the field to look like the one on the ClipTextEncode node
                     "default": "Hello World!"
                 }),
             },
         }
 
-    RETURN_TYPES = ("IMAGE",)
+    RETURN_TYPES = (IO.IMAGE,)
     #RETURN_NAMES = ("image_output_name",)
-    DESCRIPTION = "This is an example node"
+    DESCRIPTION = cleandoc(__doc__)
     FUNCTION = "test"
 
     #OUTPUT_NODE = False

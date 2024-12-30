@@ -1,6 +1,10 @@
 # cookiecutter-comfy-extension
 
-## A cookiecutter template for writing a ComfyUI custom node extension
+## Get started writing custom nodes in one step without setting up a ton of Python project config.
+
+An opinionated way to develop ComfyUI custom nodes. Uses cookiecutter to scaffold a python project.
+
+This template helps you 
 
 ## Usage
 
