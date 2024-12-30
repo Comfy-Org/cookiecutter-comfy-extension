@@ -2,6 +2,8 @@
 
 ## {{cookiecutter.project_short_description}}
 
+Get started writing custom nodes without worrying about python project setup.
+
 ## Install
 
 [Install](https://docs.comfy.org/get_started) ComfyUI first. Then look up this extension in [ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager). If you are installing manually, clone this repository under `ComfyUI/custom_nodes`.
@@ -30,6 +32,9 @@ git add .
 git commit -m "project scaffolding"
 git push
 ``` 
+
+## comfy_types
+ComfyUI exposes types that are very helpful when developing custom nodes. 
 
 ## Publishing to Registry
 
