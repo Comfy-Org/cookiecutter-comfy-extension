@@ -41,5 +41,6 @@ The resulting ComfyUI node extension project will automatically come with a few 
 - An optional `web` directory if your extension will include custom javascript
   - If selected, `web` will also be added to the project's `MANIFEST.in` to ensure that any non-python code in `web` will also be correctly installed
 - Testing via PyTest (check the `tests/` directory)
-- A Github Action that will automatically run any tests as part of Pull Requests made against your project
+- A Github Action that will automatically run any unit tests as part of Pull Requests made against your project
+- A Github Action to diff your changes for backwards incompatible changes: (node-diff)[https://github.com/Comfy-Org/node-diff]
 - A Github Action to publish to the Comfy Registry
