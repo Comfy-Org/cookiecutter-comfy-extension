@@ -23,7 +23,7 @@ The `-e` flag above will result in a "live" install, in the sense that any chang
 
 ## Using Github
 
-Install Github Desktop or follow these [instructions] (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for ssh.
+Install Github Desktop or follow these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for ssh.
 
 1. Create a Github repository that matches the directory name. 
 2. Push the files to Git
@@ -35,6 +35,13 @@ git push
 
 ## comfy_types
 ComfyUI exposes types that are very helpful when developing custom nodes. 
+
+> 💡 **Hint:** To get the types in your modern IDE, you need to add your ComfyUI directory to the include paths. This repo has a [settings.json](.vscode/settings.json) with a template that you can use. Replace the ComfyUI path with your own.
+
+## Tests
+
+- [build-pipeline.yml](.github/workflows/build-pipeline.yml) will run pytest and linter
+- [validate.yml](.github/workflows/validate.yml) will run [node-diff](https://github.com/Comfy-Org/node-diff) to check for breaking changes
 
 ## Publishing to Registry
 

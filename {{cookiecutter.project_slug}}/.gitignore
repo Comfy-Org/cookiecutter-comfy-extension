@@ -96,6 +96,5 @@ python_boilerplate/
 cookiecutter-pypackage-env/
 
 # vscode settings
-.vscode/
 .history/
 *.code-workspace
