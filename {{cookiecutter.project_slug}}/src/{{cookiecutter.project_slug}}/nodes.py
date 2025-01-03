@@ -1,6 +1,5 @@
-from comfy.comfy_types import IO, ComfyNodeABC, InputTypeDict
 from inspect import cleandoc
-class Example(ComfyNodeABC):
+class Example:
     """
     A example node
 
@@ -33,7 +32,7 @@ class Example(ComfyNodeABC):
         pass
 
     @classmethod
-    def INPUT_TYPES(s) -> InputTypeDict:
+    def INPUT_TYPES(s):
         """
             Return a dictionary which contains config for all input fields.
             Some types (string): "MODEL", "VAE", "CLIP", "CONDITIONING", "LATENT", "IMAGE", "INT", "STRING", "FLOAT".
@@ -50,15 +49,15 @@ class Example(ComfyNodeABC):
         """
         return {
             "required": {
-                "image": (IO.IMAGE, { "tooltip": "This is an image"}),
-                "int_field": (IO.INT, {
+                "image": ("Image", { "tooltip": "This is an image"}),
+                "int_field": ("INT", {
                     "default": 0,
                     "min": 0, #Minimum value
                     "max": 4096, #Maximum value
                     "step": 64, #Slider's step
                     "display": "number" # Cosmetic only: display as "number" or "slider"
                 }),
-                "float_field": (IO.FLOAT, {
+                "float_field": ("FLOAT", {
                     "default": 1.0,
                     "min": 0.0,
                     "max": 10.0,
@@ -66,14 +65,14 @@ class Example(ComfyNodeABC):
                     "round": 0.001, #The value represeting the precision to round to, will be set to the step value by default. Can be set to False to disable rounding.
                     "display": "number"}),
                 "print_to_screen": (["enable", "disable"],),
-                "string_field": (IO.STRING, {
+                "string_field": ("STRING", {
                     "multiline": False, #True if you want the field to look like the one on the ClipTextEncode node
                     "default": "Hello World!"
                 }),
             },
         }
 
-    RETURN_TYPES = (IO.IMAGE,)
+    RETURN_TYPES = ("IMAGE",)
     #RETURN_NAMES = ("image_output_name",)
     DESCRIPTION = cleandoc(__doc__)
     FUNCTION = "test"

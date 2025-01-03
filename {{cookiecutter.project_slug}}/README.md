@@ -44,10 +44,6 @@ git push
 
 An example custom node is located in [node.py](src/{{cookiecutter.project_slug}}/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
 
-## Type Hints
-ComfyUI exposes types that are very helpful when developing custom nodes.
-
-> 💡 **Hint:** To get the types in your modern IDE, you need to add your ComfyUI directory to the include paths. This repo has a [settings.json](.vscode/settings.json) with a template that you can use. Replace the ComfyUI path with your own.
 
 ## Tests
 
