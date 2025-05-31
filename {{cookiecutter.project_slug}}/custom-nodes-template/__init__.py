@@ -3,7 +3,7 @@
 __all__ = [
     "NODE_CLASS_MAPPINGS",
     "NODE_DISPLAY_NAME_MAPPINGS",
-    {% if cookiecutter.__include_web -%}
+    {% if cookiecutter.frontend_type == 'js' -%}
     "WEB_DIRECTORY",
     {%- endif %}
 ]
@@ -15,6 +15,6 @@ __version__ = "{{cookiecutter.version}}"
 from .src.{{cookiecutter.project_slug}}.nodes import NODE_CLASS_MAPPINGS
 from .src.{{cookiecutter.project_slug}}.nodes import NODE_DISPLAY_NAME_MAPPINGS
 
-{% if cookiecutter.__include_web -%}
+{% if cookiecutter.frontend_type == 'js' -%}
 WEB_DIRECTORY = "./web"
 {%- endif %}

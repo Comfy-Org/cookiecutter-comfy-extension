@@ -2,12 +2,20 @@
   "full_name": "",
   "email": "you@gmail.com",
   "github_username": "your_github_username",
+  "frontend_type": ["no", "react", "js"],
   "project_name": "My Custom Nodepack",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_').replace('comfyui_', '').replace('comfy_', '') }}",
   "project_short_description": "A collection of custom nodes for ComfyUI",
   "version": "0.0.1",
   "open_source_license": ["GNU General Public License v3", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "Not open source"],
-  "include_web_directory_for_custom_javascript": false,
   "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
-  "__include_web": "{{ cookiecutter.include_web_directory_for_custom_javascript }}"
+  "_copy_without_render": ["*.tsx", "*.ts", "*.yml"],
+    "__prompts__": {
+      "frontend_type": {
+      "__prompt__": "Do you want to write frontend components?",
+      "no": "No",
+      "react": "Yes, using React",
+      "js": "Yes, my own way"
+      }
+    }
 }
