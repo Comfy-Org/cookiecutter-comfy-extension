@@ -1,0 +1,3 @@
+[submodule "{{cookiecutter.project_slug}}/react-extension-template"]
+	path = {{cookiecutter.project_slug}}/react-extension-template
+	url = https://github.com/Comfy-Org/ComfyUI-React-Extension-Template

@@ -37,6 +37,9 @@ homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
 PublisherId = "{{cookiecutter.github_username}}"
 DisplayName = "{{cookiecutter.project_name}}"
 Icon = ""
+{% if cookiecutter.frontend_type == 'react' -%}
+includes = ["dist/"]
+{%- endif %}
 
 [tool.setuptools.package-data]
 "*" = ["*.*"]

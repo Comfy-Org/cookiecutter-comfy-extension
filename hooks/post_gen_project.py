@@ -11,7 +11,7 @@ def init_git():
         ["git", "branch", "-M", "main"],
         ["git", "remote", "add", "origin", "https://github.com/{{cookiecutter.__gh_slug}}.git"],
     ]
-    
+
     for command in commands:
         try:
             subprocess.run(command, check=True)
@@ -21,6 +21,29 @@ def init_git():
             print(f"Error: {e}")
             return False
     return True
+
+
+def replace_text_in_files(files_to_replace, replacements):
+    """Replace text in specified files."""
+    for file_path in files_to_replace:
+        file_path = Pth(file_path)
+        if file_path.exists() and file_path.is_file():
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+
+                for old_text, new_text in replacements.items():
+                    content = content.replace(old_text, new_text)
+
+                with open(file_path, 'w', encoding='utf-8') as f:
+                    f.write(content)
+
+                print(f"✓ Replaced text in: {file_path}")
+            except Exception as e:
+                print(f"× Failed to replace text in {file_path}: {e}")
+        else:
+            print(f"× File not found: {file_path}")
+
 
 def setup_project_structure():
     frontend_type = "{{cookiecutter.frontend_type}}"
@@ -45,6 +68,10 @@ def setup_project_structure():
         if Pth("react-extension-template").exists():
             print("✓ Found react-extension-template directory")
             for item in Pth("react-extension-template").iterdir():
+                # Skip git-related files when copying from react template
+                if item.name in [".git", ".gitmodules", ".gitignore"]:
+                    continue
+
                 target = Pth(item.name)
                 if item.is_file():
                     shutil.copy2(item, target)
@@ -52,8 +79,24 @@ def setup_project_structure():
                 else:
                     if target.exists():
                         shutil.rmtree(target)
-                    shutil.copytree(item, target)
+                    shutil.copytree(item, target, ignore=shutil.ignore_patterns('.git', '.gitmodules', ".gitignore"))
                     print(f"✓ Copied directory: {item} -> {target}")
+
+            files_to_replace = [
+                "README.md",
+                "ui/package.json",
+            ]
+
+            replacements = {
+                "ComfyUI React Extension Template": "{{cookiecutter.project_name}}",
+                "ComfyUI-React-Extension-Template": "{{cookiecutter.project_slug}}",
+                "comfyui-example-react-extension": "{{cookiecutter.project_slug}}",
+                "Comfy-Org": "{{cookiecutter.github_username}}",
+                "MIT": "{{cookiecutter.open_source_license}}",
+                '"version": "0.1.0"': '"version": "{{cookiecutter.version}}"',
+            }
+
+            replace_text_in_files(files_to_replace, replacements)
 
         if Pth("custom-nodes-template").exists():
             shutil.rmtree("custom-nodes-template")
