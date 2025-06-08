@@ -4,7 +4,7 @@
 
 An opinionated way to develop ComfyUI custom nodes. Uses cookiecutter to scaffold a python project.
 
-This template helps you 
+This template helps you
 
 ## Usage
 
@@ -30,6 +30,13 @@ This template helps you
   # initialize git repo in your new project
   cd <your-project-name>
   git init
+  ```
+- Run `cookiecutter` with this as local template:
+  ```bash
+  git clone https://github.com/Comfy-Org/cookiecutter-comfy-extension
+  cd cookiecutter-comfy-extension
+  git submodule update --init --recursive
+  cookiecutter .
   ```
 
 ## Features
