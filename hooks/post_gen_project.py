@@ -64,6 +64,10 @@ def setup_project_structure():
             shutil.rmtree("react-extension-template")
             print("✓ Removed react-extension-template directory")
 
+        if Pth("vue-basic-template").exists():
+            shutil.rmtree("vue-basic-template")
+            print("✓ Removed vue-basic-template directory")
+
     elif frontend_type == "react":
         if Pth("react-extension-template").exists():
             print("✓ Found react-extension-template directory")
@@ -102,6 +106,39 @@ def setup_project_structure():
             shutil.rmtree("custom-nodes-template")
             print("✓ Removed custom-nodes-template directory")
 
+    elif frontend_type == "vue":
+        if Pth("vue-basic-template").exists():
+            print("✓ Found vue-basic-template directory")
+            for item in Pth("vue-basic-template").iterdir():
+                # Skip git-related files when copying from react template
+                if item.name in [".git", ".gitmodules", ".gitignore"]:
+                    continue
+
+                target = Pth(item.name)
+                if item.is_file():
+                    shutil.copy2(item, target)
+                    print(f"✓ Copied file: {item} -> {target}")
+                else:
+                    if target.exists():
+                        shutil.rmtree(target)
+                    shutil.copytree(item, target, ignore=shutil.ignore_patterns('.git', '.gitmodules', ".gitignore"))
+                    print(f"✓ Copied directory: {item} -> {target}")
+
+            files_to_replace = [
+                "README.md",
+            ]
+
+            replacements = {
+                "ComfyUI Frontend Vue Basic": "{{cookiecutter.project_name}}",
+                "MIT License": "{{cookiecutter.open_source_license}}",
+            }
+
+            replace_text_in_files(files_to_replace, replacements)
+
+        if Pth("custom-nodes-template").exists():
+            shutil.rmtree("custom-nodes-template")
+            print("✓ Removed custom-nodes-template directory")
+
     if Pth("common").exists():
         print("✓ Found common directory")
         for item in Pth("common").iterdir():
@@ -109,7 +146,7 @@ def setup_project_structure():
                 shutil.copy2(item, ".")
                 print(f"✓ Copied common file: {item}")
 
-    for template_dir in ["common", "custom-nodes-template", "react-extension-template"]:
+    for template_dir in ["common", "custom-nodes-template", "react-extension-template", "vue-basic-template"]:
         if Pth(template_dir).exists():
             shutil.rmtree(template_dir)
             print(f"✓ Cleaned up: {template_dir}")
