@@ -61,7 +61,7 @@ if __name__ == "__main__":
     template_source = "{{ cookiecutter._template }}"
     frontend_type = "{{cookiecutter.frontend_type}}"
 
-    if template_source.startswith("gh:") and frontend_type == "react":
+    if template_source.startswith("gh:") and (frontend_type == "react" or frontend_type == "vue"):
         submodule_success = init_submodules()
 
         if not submodule_success:

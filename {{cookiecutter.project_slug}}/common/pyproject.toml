@@ -41,6 +41,10 @@ Icon = ""
 includes = ["dist/"]
 {%- endif %}
 
+{% if cookiecutter.frontend_type == 'vue' -%}
+includes = ["js"]
+{%- endif %}
+
 [tool.setuptools.package-data]
 "*" = ["*.*"]
 

@@ -1,3 +1,7 @@
 [submodule "{{cookiecutter.project_slug}}/react-extension-template"]
 	path = {{cookiecutter.project_slug}}/react-extension-template
 	url = https://github.com/Comfy-Org/ComfyUI-React-Extension-Template
+
+[submodule "{{cookiecutter.project_slug}}/vue-basic-template"]
+	path = {{cookiecutter.project_slug}}/vue-basic-template
+	url = https://github.com/jtydhr88/ComfyUI_frontend_vue_basic
