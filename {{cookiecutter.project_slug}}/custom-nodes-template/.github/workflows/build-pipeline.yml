@@ -1,5 +1,4 @@
-# GitHub CI build pipeline
-name: {{ cookiecutter.project_slug }} CI build
+name: CI build
 
 on:
   pull_request:
@@ -8,7 +7,7 @@ on:
       - main
 jobs:
   build:
-    runs-on: {% raw %} ${{ matrix.os }} {% endraw %}
+    runs-on: ${{ matrix.os }}
     env:
       PYTHONIOENCODING: "utf8"
     strategy:
@@ -21,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: {% raw %} ${{ matrix.python-version }} {% endraw %}
+          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip

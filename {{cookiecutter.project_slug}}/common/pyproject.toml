@@ -11,6 +11,7 @@ authors = [
 ]
 readme = "README.md"
 license = {text = "{{cookiecutter.open_source_license}}"}
+requires-python = ">=3.10"
 classifiers = []
 dependencies = [
 
@@ -29,20 +30,23 @@ dev = [
 ]
 
 [project.urls]
-bugs = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
-homepage = "https://github.com/{{cookiecutter.__gh_slug}}"
+Repository = "https://github.com/{{cookiecutter.__gh_slug}}"
+BugTracker = "https://github.com/{{cookiecutter.__gh_slug}}/issues"
+Documentation = "https://github.com/{{cookiecutter.__gh_slug}}/wiki"
 
 
 [tool.comfy]
 PublisherId = "{{cookiecutter.github_username}}"
 DisplayName = "{{cookiecutter.project_name}}"
 Icon = ""
+Tags = []
+Repository = "https://github.com/{{cookiecutter.__gh_slug}}"
 {% if cookiecutter.frontend_type == 'react' -%}
 includes = ["dist/"]
-{%- endif %}
-
-{% if cookiecutter.frontend_type == 'vue' -%}
+{%- elif cookiecutter.frontend_type == 'vue' -%}
 includes = ["js"]
+{%- else %}
+includes = []
 {%- endif %}
 
 [tool.setuptools.package-data]
