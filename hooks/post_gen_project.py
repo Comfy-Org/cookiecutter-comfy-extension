@@ -160,9 +160,10 @@ if __name__ == "__main__":
     frontend_type = "{{cookiecutter.frontend_type}}"
 
     if frontend_type == "no":
-        web_dir = Pth("web")
-        if web_dir.exists():
-            shutil.rmtree("web")
+        # Remove web/js/ but keep web/docs/ for node help pages
+        js_dir = Pth("web/js")
+        if js_dir.exists():
+            shutil.rmtree(js_dir)
 
     if init_git():
         print("✓ Git repository initialized and remote configured")
