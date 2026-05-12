@@ -49,7 +49,7 @@ class Example:
         """
         return {
             "required": {
-                "image": ("Image", { "tooltip": "This is an image"}),
+                "image": ("IMAGE", { "tooltip": "This is an image"}),
                 "int_field": ("INT", {
                     "default": 0,
                     "min": 0, #Minimum value
